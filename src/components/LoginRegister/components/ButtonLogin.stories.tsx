@@ -1,18 +1,14 @@
 import ButtonLogin from "./ButtonLogin";
-import { ButtonLoginProps } from "./ButtonLogin";
-import { FaGoogle, FaTwitter, FaFacebook } from "react-icons/fa";
+import { FaGoogle, FaFacebook } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import React from "react";
 
 export default {
   title: "Buttons/SocialButtons",
   component: ButtonLogin,
-  args: {
-    title: "Entrar com o Google",
-    icon: <FaGoogle />,
-    color: "#4285F4",
-  } as ButtonLoginProps,
+
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <div
         style={{
           display: "flex",
@@ -30,32 +26,22 @@ export const Default = {
   args: {
     title: "Entrar com o Google",
     icon: <FaGoogle />,
-    color: "#4285F4",
-    onClick: () => {
-      console.log("Clicou");
-    },
+    color: "#ea4335",
   },
 };
 
 export const Twitter = {
   args: {
     title: "Entrar com o Twitter",
-    icon: <FaTwitter />,
-    color: "#4285F4",
-    onClick: () => {
-      console.log("Clicou");
-    },
+    icon: <FaXTwitter />,
+    color: "#191919",
   },
 };
 
 export const Facebook = {
-    args: {
-      title: "Entrar com o Twitter",
-      icon: <FaFacebook/>,
-      color: "#4285F4",
-      onClick: () => {
-        console.log("Clicou");
-      },
-    },
-  };
-  
+  args: {
+    title: "Entrar com o Facebook",
+    icon: <FaFacebook />,
+    color: "#0866ff",
+  },
+};

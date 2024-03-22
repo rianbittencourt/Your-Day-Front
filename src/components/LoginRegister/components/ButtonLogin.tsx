@@ -15,7 +15,7 @@ const Button = styled.a`
   color: white;
 
   &:hover {
-    opacity: 0.95;
+    opacity: 0.8;
   }
 `;
 
