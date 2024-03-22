@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import styled from "styled-components";
 
 const Button = styled.a`
@@ -12,6 +11,8 @@ const Button = styled.a`
   border-radius: 8px;
   border: 1px solid #ccc;
   cursor: pointer;
+  width: 100%;
+  color: white;
 
   &:hover {
     opacity: 0.95;
@@ -31,17 +32,19 @@ const Icon = styled.div`
   margin-right: 10px;
 `;
 
+export interface ButtonLoginProps {
+  title: string;
+  icon: React.ReactNode;
+  color: string;
+  onClick: () => void;
+}
+
 export default function ButtonLogin({
   title,
   icon,
   color,
   onClick,
-}: {
-  title: string;
-  icon: React.ReactNode;
-  color: string;
-  onClick: () => void;
-}) {
+}: ButtonLoginProps) {
   return (
     <Button color={color} onClick={onClick}>
       <Icon>{icon}</Icon>
