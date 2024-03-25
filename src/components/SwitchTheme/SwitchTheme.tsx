@@ -1,18 +1,15 @@
-import React from "react";
+"use client";
 import Switch from "react-switch";
 import { useContext } from "react";
-import { ThemeContext } from "styled-components";
+import { ThemeContext } from "../../hooks/ThemeContext.jsx";
 
-interface Props {
-  toggleTheme: () => void;
-}
-
-export default function SwitchTheme({ toggleTheme }: Props) {
+export default function SwitchTheme(s) {
+  const { theme, setTheme } = useContext(ThemeContext);
   return (
     <div>
       <Switch
-        onChange={toggleTheme}
-        checked={false}
+        onChange={() => setTheme(theme === "light" ? "dark" : "light")}
+        checked={theme === "dark"}
         checkedIcon={false}
         uncheckedIcon={false}
         height={10}
