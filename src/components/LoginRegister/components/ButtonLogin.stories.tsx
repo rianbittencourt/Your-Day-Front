@@ -1,11 +1,11 @@
-import ButtonLogin from "./ButtonLogin";
+import ButtonLoginT from "./ButtonLogin";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import React from "react";
 
 export default {
   title: "Buttons/SocialButtons",
-  component: ButtonLogin,
+  component: ButtonLoginT,
 
   decorators: [
     (Story: any) => (

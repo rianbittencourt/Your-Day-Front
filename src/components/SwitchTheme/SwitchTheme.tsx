@@ -8,12 +8,11 @@ interface Props {
 }
 
 export default function SwitchTheme({ toggleTheme }: Props) {
-  const { title } = useContext(ThemeContext);
   return (
     <div>
       <Switch
         onChange={toggleTheme}
-        checked={title === "dark"}
+        checked={false}
         checkedIcon={false}
         uncheckedIcon={false}
         height={10}
