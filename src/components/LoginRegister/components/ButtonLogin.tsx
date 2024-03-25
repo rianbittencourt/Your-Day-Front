@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 interface ButtonLoginProps {
@@ -14,15 +15,15 @@ export default function ButtonLoginT({
   onClick,
 }: ButtonLoginProps) {
   return (
-    <button
+    <a
       style={{ backgroundColor: color }}
-      className={`flex justify-center items-center p-3 m-3 rounded-lg border border-gray-300 cursor-pointer w-full text-white hover:opacity-80`}
+      className={`flex justify-center items-center  p-3 m-3 rounded-lg  cursor-pointer  text-white hover:opacity-90 delay-75`}
       onClick={onClick}
     >
-      <div className="text-2xl flex justify-center items-center mr-3">
+      <div className="text-2xl flex justify-center items-center mr-3 fill-white ">
         {icon}
       </div>
       <p className="text-base font-normal">{title}</p>
-    </button>
+    </a>
   );
 }

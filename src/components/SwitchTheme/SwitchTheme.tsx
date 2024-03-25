@@ -1,7 +1,7 @@
-"use client";
 import Switch from "react-switch";
 import { useContext } from "react";
 import { ThemeContext } from "../../hooks/ThemeContext.jsx";
+import { MdLightMode, MdNightlight } from "react-icons/md";
 
 export default function SwitchTheme(s) {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -12,13 +12,17 @@ export default function SwitchTheme(s) {
         checked={theme === "dark"}
         checkedIcon={false}
         uncheckedIcon={false}
-        height={10}
-        width={30}
-        handleDiameter={20}
-        offColor="#000000"
-        onColor="#000000"
-        onHandleColor="#000000"
-        offHandleColor="#000000"
+        className=" relative"
+        uncheckedHandleIcon={
+          <MdLightMode className="text-center mx-auto mt-1 text-[#333]" />
+        }
+        checkedHandleIcon={
+          <MdNightlight className="text-center mx-auto mt-1 text-white" />
+        }
+        onColor="#f5f5f5"
+        offColor="#333"
+        onHandleColor="#333"
+        offHandleColor="#F5F5F5"
       />
     </div>
   );
