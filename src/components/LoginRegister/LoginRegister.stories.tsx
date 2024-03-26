@@ -3,7 +3,7 @@ import LoginRegister from "./LoginRegister";
 import { ThemeProvider } from "../../hooks/ThemeContext";
 
 export default {
-  title: "Pages/LoginRegister",
+  title: "Layouts/LoginRegister",
   component: LoginRegister,
 
   decorators: [

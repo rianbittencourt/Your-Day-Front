@@ -1,9 +1,10 @@
 "use client";
-import "../styles/global.css";
+import "../index.css";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
-import SwitchTheme from "@/components/SwitchTheme/SwitchTheme";
+
 import { ThemeProvider } from "@/hooks/ThemeContext";
+import Header from "@/components/Header/Header";
 
 export default function RootLayout({
   children,
@@ -13,7 +14,10 @@ export default function RootLayout({
   return (
     <ThemeProvider initialTheme="dark">
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <Header />
+          {children}
+        </body>
       </html>
     </ThemeProvider>
   );
