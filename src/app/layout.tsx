@@ -15,12 +15,12 @@ export default function RootLayout({
 
   return (
     <Providers >
-      <html lang="pt-BR">
+    
         <body className={inter.className}>
           <Header />
           {children}
         </body>
-      </html>
+ 
     </Providers>
   );
 }
