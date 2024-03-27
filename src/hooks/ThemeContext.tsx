@@ -16,10 +16,12 @@ interface ThemeProviderProps {
 }
 
 const getInitialTheme = () => {
-  if (typeof window !== "undefined" && window.localStorage) {
-    const storedPrefs = window.localStorage.getItem("color-theme");
-    if (typeof storedPrefs === "string") {
-      return storedPrefs;
+  if (typeof window !== "undefined") {
+    if (window.localStorage) {
+      const storedPrefs = window.localStorage.getItem("color-theme");
+      if (typeof storedPrefs === "string") {
+        return storedPrefs;
+      }
     }
 
     const userMedia = window.matchMedia("(prefers-color-scheme: dark)");
@@ -37,23 +39,23 @@ export const ThemeProvider = ({
 }: ThemeProviderProps) => {
   const [theme, setTheme] = useState<string>(getInitialTheme());
 
-  const rawSetTheme = (rowTheme: string) => {
-    const root = window.document.documentElement;
-    const isDark = rowTheme === "dark";
-
-    root.classList.remove(isDark ? "light" : "dark");
-    root.classList.add(rowTheme);
-
-    localStorage.setItem("color-theme", rowTheme);
-  };
-
-  if (initialTheme) {
-    rawSetTheme(initialTheme);
-  }
-
   useEffect(() => {
+    const rawSetTheme = (newTheme: string) => {
+      const root = document.documentElement;
+      const isDark = newTheme === "dark";
+
+      root.classList.remove(isDark ? "light" : "dark");
+      root.classList.add(newTheme);
+
+      localStorage.setItem("color-theme", newTheme);
+    };
+
+    if (initialTheme) {
+      rawSetTheme(initialTheme);
+    }
+
     rawSetTheme(theme);
-  }, [theme]);
+  }, [initialTheme, theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>

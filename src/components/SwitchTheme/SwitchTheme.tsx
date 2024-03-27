@@ -1,9 +1,10 @@
+'use client';
 import Switch from "react-switch";
 import { useContext } from "react";
 import { ThemeContext } from "@/hooks/ThemeContext";
 import { MdLightMode, MdNightlight } from "react-icons/md";
 
-export default function SwitchTheme(s) {
+export default function SwitchTheme() {
   const { theme, setTheme } = useContext(ThemeContext);
   return (
     <div>
