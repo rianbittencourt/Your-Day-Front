@@ -7,18 +7,16 @@ import { useLanguageContext } from "@/hooks/LanguageHook";
 import { Locale } from "@/config/i18n.config";
 import LanguageSwitch from "../LanguageSwitch/LanguageSwtich";
 import { useLanguage } from "@/hooks/LanguageHook";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { useEffect } from "react";
 
 export default function LoginRegister() {
   const { lang } = useLanguage();
   const t = getDictionaryUseClient(lang);
+
+  useEffect(() => {
+    console.log("alterou");
+  }, [lang]);
+
   return (
     <div className="flex items-center justify-center relative flex-grow  rounded-md shadow-2xl max-w-7xl sm:max-w-2xl w-full h-full bg-secondary ">
       <div className="absolute top-5 right-5">
@@ -27,20 +25,7 @@ export default function LoginRegister() {
       <div className="absolute top-5 left-5">
         <LanguageSwitch />
       </div>
-    
-        <Sheet>
-          <SheetTrigger>Open</SheetTrigger>
-          <SheetContent>
-            <SheetHeader>
-              <SheetTitle>Are you absolutely sure?</SheetTitle>
-              <SheetDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </SheetDescription>
-            </SheetHeader>
-          </SheetContent>
-        </Sheet>
- 
+
       <div className="flex flex-col  mx-auto px-2  ">
         <div className="mr-14">
           <h2 className="text-3xl text-primary">{t.register.welcome}</h2>

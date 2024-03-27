@@ -1,71 +1,8 @@
 "use client";
 import SwitchTheme from "../ThemeSwtich/SwitchTheme";
-import { FaUser } from "react-icons/fa";
-import { IoMdSettings } from "react-icons/io";
-import { PiPencilSimpleLineFill } from "react-icons/pi";
-import { FaReadme } from "react-icons/fa6";
-
-interface MenuItem {
-  title: string;
-  href: string;
-}
-
-const links: MenuItem[] = [
-  {
-    title: "Perfil",
-    href: "#",
-  },
-  {
-    title: "Escrever",
-    href: "#",
-  },
-  {
-    title: "Descobrir",
-    href: "#",
-  },
-  {
-    title: "Settings",
-    href: "#",
-  },
-  {
-    title: "FAQ",
-    href: "#",
-  },
-];
-
-const MenuItems = () => {
-  return (
-    <ul className="text-primary  gap-5 font-medium sm:flex hidden">
-      {links.map((link) => (
-        <li
-          className="hover:text-[#1CC0A9] cursor-pointer delay-100"
-          key={link.title}
-        >
-          {link.title}
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-const MenuItemsMobile = () => {
-  return (
-    <ul className="text-primary  gap-2 font-medium sm:hidden mx-auto flex relative rounded z-10">
-      <li className="hover:text-[#1CC0A9] cursor-pointer -translate-y-7 delay-100 bg-[#1CC0A9]  rounded-full flex p-4 justify-center border-[10px] border-[#333] items-center  ">
-        <FaUser className="text-3xl" />
-      </li>
-      <li className="hover:text-[#1CC0A9]  z-20  cursor-pointer delay-100 ] border-[10px] border-[#222]  rounded-full flex p-4 justify-center items-center  ">
-        <PiPencilSimpleLineFill className="text-3xl" />
-      </li>
-      <li className="hover:text-[#1CC0A9] cursor-pointer delay-100   rounded-full flex p-4 border-[10px] border-[#222] justify-center items-center  ">
-        <FaReadme className="text-3xl" />
-      </li>
-      <li className="hover:text-[#1CC0A9] cursor-pointer delay-100   rounded-full flex p-4 border-[10px] border-[#222] justify-center items-center  ">
-        <IoMdSettings className="text-3xl" />
-      </li>
-    </ul>
-  );
-};
+import MenuDesktop from "./components/MenuDesktop/MenuDesktop";
+import MenuMobile from "./components/MenuMobile/MenuMobile";
+import SettingsButton from "../SettingsButton/SettingsButton";
 
 export default function Header() {
   return (
@@ -74,10 +11,10 @@ export default function Header() {
         <p className="text-3xl text-primary font-extralight sm:block hidden">
           Your Day
         </p>
-        <MenuItems />
-        <MenuItemsMobile />
+        <MenuDesktop />
+        <MenuMobile />
         <div className="sm:block hidden">
-          <SwitchTheme />
+          <SettingsButton />
         </div>
       </div>
     </header>
