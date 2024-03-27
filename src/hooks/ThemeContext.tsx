@@ -1,4 +1,19 @@
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext, useEffect, ReactNode } from "react";
+
+interface ThemeContextType {
+  theme: string;
+  setTheme: (theme: string) => void;
+}
+
+export const ThemeContext = createContext<ThemeContextType>({
+  theme: "light",
+  setTheme: () => {},
+});
+
+interface ThemeProviderProps {
+  initialTheme?: string;
+  children: ReactNode;
+}
 
 const getInitialTheme = () => {
   if (typeof window !== "undefined" && window.localStorage) {
@@ -16,12 +31,13 @@ const getInitialTheme = () => {
   return "light";
 };
 
-export const ThemeContext = createContext();
+export const ThemeProvider = ({
+  initialTheme,
+  children,
+}: ThemeProviderProps) => {
+  const [theme, setTheme] = useState<string>(getInitialTheme());
 
-export const ThemeProvider = ({ initialTheme, children }) => {
-  const [theme, setTheme] = useState(getInitialTheme());
-
-  const rawSetTheme = (rowTheme) => {
+  const rawSetTheme = (rowTheme: string) => {
     const root = window.document.documentElement;
     const isDark = rowTheme === "dark";
 

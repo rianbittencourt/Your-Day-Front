@@ -1,6 +1,6 @@
 import Switch from "react-switch";
 import { useContext } from "react";
-import { ThemeContext } from "../../hooks/ThemeContext.jsx";
+import { ThemeContext } from "@/hooks/ThemeContext";
 import { MdLightMode, MdNightlight } from "react-icons/md";
 
 export default function SwitchTheme(s) {
