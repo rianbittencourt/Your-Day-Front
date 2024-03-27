@@ -8,7 +8,7 @@ export default {
 
   decorators: [
     (Story: any) => (
-      <ThemeProvider initialTheme="dark">
+      <ThemeProvider >
         <div className="h-screen">
           <Story />
         </div>

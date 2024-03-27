@@ -7,5 +7,5 @@ interface ProvidersProps {
 }
 
 export function Providers({ children }: ProvidersProps) {
-  return <ThemeProvider initialTheme="dark">{children}</ThemeProvider>;
+  return <ThemeProvider >{children}</ThemeProvider>;
 }

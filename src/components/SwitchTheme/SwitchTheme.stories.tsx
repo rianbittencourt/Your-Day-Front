@@ -8,7 +8,7 @@ export default {
 
   decorators: [
     (Story: any) => (
-      <ThemeProvider initialTheme="dark">
+      <ThemeProvider >
         <Story />
       </ThemeProvider>
     ),
