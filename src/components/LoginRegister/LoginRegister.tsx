@@ -1,33 +1,65 @@
 "use client";
 import ButtonLogin from "./components/ButtonLogin";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
-import SwitchTheme from "../SwitchTheme/SwitchTheme";
+import SwitchTheme from "../ThemeSwtich/SwitchTheme";
 import { getDictionaryUseClient } from "@/dictionaries/default-dictionaries-use-client";
+import { useLanguageContext } from "@/hooks/LanguageHook";
 import { Locale } from "@/config/i18n.config";
+import LanguageSwitch from "../LanguageSwitch/LanguageSwtich";
+import { useLanguage } from "@/hooks/LanguageHook";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export default function LoginRegister() {
+  const { lang } = useLanguage();
+  const t = getDictionaryUseClient(lang);
   return (
     <div className="flex items-center justify-center relative flex-grow  rounded-md shadow-2xl max-w-7xl sm:max-w-2xl w-full h-full bg-secondary ">
       <div className="absolute top-5 right-5">
         <SwitchTheme />
       </div>
+      <div className="absolute top-5 left-5">
+        <LanguageSwitch />
+      </div>
+    
+        <Sheet>
+          <SheetTrigger>Open</SheetTrigger>
+          <SheetContent>
+            <SheetHeader>
+              <SheetTitle>Are you absolutely sure?</SheetTitle>
+              <SheetDescription>
+                This action cannot be undone. This will permanently delete your
+                account and remove your data from our servers.
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
+ 
       <div className="flex flex-col  mx-auto px-2  ">
         <div className="mr-14">
-          <h2 className="text-3xl text-primary">testes</h2>
-          <h2 className="text-6xl font-semibold text-[#1CC0A9] ">tsete</h2>
+          <h2 className="text-3xl text-primary">{t.register.welcome}</h2>
+          <h2 className="text-6xl font-semibold text-[#1CC0A9] ">
+            {t.register.title}
+          </h2>
         </div>
         <p className="mt-10 text-center text-xl font-medium text-primary ">
-          tsete
+          {t.register.paragrafe}
         </p>
         <div className="flex  flex-col">
           <ButtonLogin
-            title="teste"
+            title={t.register.googleButtonText}
             icon={<FaGoogle />}
             color="#ea4335"
             onClick={() => {}}
           />
           <ButtonLogin
-            title="teste"
+            title={t.register.facebookButtonText}
             icon={<FaFacebook />}
             color="#0866ff"
             onClick={() => {}}

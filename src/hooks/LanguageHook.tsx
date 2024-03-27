@@ -78,6 +78,10 @@ export const LanguageProvider: React.FC<{
   lang: Locale;
 }> = ({ children }) => {
   const { lang, setLang } = useLanguage();
+  useEffect(() => {
+    console.log("O idioma foi alterado para:", lang);
+    // Coloque aqui a lógica que você deseja executar quando o idioma for alterado
+  }, [lang]);
 
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>

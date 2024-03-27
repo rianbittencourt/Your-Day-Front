@@ -1,5 +1,5 @@
 "use client";
-import SwitchTheme from "../SwitchTheme/SwitchTheme";
+import SwitchTheme from "../ThemeSwtich/SwitchTheme";
 import { FaUser } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
 import { PiPencilSimpleLineFill } from "react-icons/pi";
