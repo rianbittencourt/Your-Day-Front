@@ -3,15 +3,19 @@
 @tailwind utilities;
 
 .dark {
-  --color-bg-primary: #333;
-  --color-bg-secondary: #222;
+  --color-bg-primary: #1c1c1c;
+  --color-bg-secondary: #141414;
   --color-text-primary: #fff;
+
+  --color-test: rgb(14, 49, 51);
 }
 
 .light {
-  --color-bg-primary: #e2e2e2;
-  --color-bg-secondary: #fff;
+  --color-bg-primary: #fff;
+  --color-bg-secondary: #f6f6f6;
   --color-text-primary: #333;
+
+  --color-test: #00fdfd;
 }
 
 @layer base {
@@ -47,7 +51,7 @@
 
     --radius: 0.5rem;
 
-    --alternative-color: 
+    --alternative-color:                 
   ;
   }
 

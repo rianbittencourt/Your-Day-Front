@@ -7,20 +7,17 @@ export const enUS = {
   menuItems: {
     perfil: {
       title: "Profile",
-      href: "#",
+      href: "/profile",
     },
     escrever: {
       title: "Write",
-      href: "#",
+      href: "/write",
     },
     descobrir: {
-      title: "Search",
-      href: "#",
+      title: "Read",
+      href: "/read",
     },
-    faq: {
-      title: "FAQ",
-      href: "#",
-    },
+   
   },
 
   register: {

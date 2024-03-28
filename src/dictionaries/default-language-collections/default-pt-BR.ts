@@ -7,19 +7,15 @@ export const ptBR = {
   menuItems: {
     perfil: {
       title: "Perfil",
-      href: "#",
+      href: "/profile",
     },
     escrever: {
       title: "Escrever",
-      href: "#",
+      href: "/write",
     },
     descobrir: {
-      title: "Descobrir",
-      href: "#",
-    },
-    faq: {
-      title: "FAQ",
-      href: "#",
+      title: "Ler",
+      href: "/read",
     },
   },
 

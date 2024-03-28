@@ -43,8 +43,8 @@ export default function MenuMobile() {
     <ul className="text-primary  gap-2 font-medium sm:hidden mx-auto flex relative rounded  z-10">
       {MenuItems.map((menuItem) => (
         <li
-          className={` p-4 delay-100 hover:text-[#1CC0A9] border-[10px] rounded-full 
-        ${router === menuItem.href ? "-translate-y-8  border-bgColor bg-[#1CC0A9] hover:text-primary cursor-none" : " border-transparent"}
+          className={` p-4 delay-100  border-b-[2px] 
+        ${router === menuItem.href ? "  border-white hover:text-primary cursor-none" : " border-transparent"}
       `}
           key={menuItem.title}
         >

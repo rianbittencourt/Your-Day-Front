@@ -1,8 +1,9 @@
 import LoginRegister from "@/components/LoginRegister/LoginRegister";
+import MainContent from "@/components/MainContent/MainContent";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between sm:p-20 bg-primary">
-
-    </main>
+    <div className=" max-w-7xl mx-auto sm:px-5 px-10 mb-[10rem] sm:mb-0">
+      <MainContent />
+    </div>
   );
 }
