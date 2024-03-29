@@ -8,7 +8,7 @@ import { Locale } from "@/config/i18n.config";
 import LanguageSwitch from "../LanguageSwitch/LanguageSwtich";
 import { useLanguage } from "@/hooks/LanguageHook";
 import { useEffect } from "react";
-
+import { signIn } from "next-auth/react";
 export default function LoginRegister() {
   const { lang } = useLanguage();
   const t = getDictionaryUseClient(lang);
@@ -41,7 +41,9 @@ export default function LoginRegister() {
             title={t.register.googleButtonText}
             icon={<FaGoogle />}
             color="#ea4335"
-            onClick={() => {}}
+            onClick={() => {
+              signIn("google");
+            }}
           />
           <ButtonLogin
             title={t.register.facebookButtonText}
