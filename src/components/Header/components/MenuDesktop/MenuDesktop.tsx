@@ -10,7 +10,7 @@ export default function MenuDesktop() {
   const { menuItems } = t;
 
   return (
-    <ul className="text-primary gap-5 font-medium sm:flex hidden">
+    <ul className="text-primary gap-8  font-medium sm:flex hidden">
       {Object.values(menuItems).map((menuItem) => (
         <li
           className="hover:text-[#1CC0A9] cursor-pointer delay-100"
