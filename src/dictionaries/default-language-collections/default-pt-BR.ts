@@ -4,6 +4,14 @@ export const ptBR = {
     description: "Registre sua História",
   },
 
+  home: {
+    missionTitle: "Nossa Missão",
+    missionFirstP:
+      "Nossa missão é proporcionar um espaço seguro e acolhedor onde indivíduos possam expressar livremente seus pensamentos, sentimentos e experiências do dia a dia. Acreditamos na importância da autenticidade e da conexão humana genuína, e é por isso que nos dedicamos a criar o",
+    missionSecondP:
+      "Nosso compromisso é criar um ambiente onde todos se sintam bem-vindos e valorizados, independentemente de sua origem, cultura ou experiências pessoais. Queremos promover a empatia, a compreensão e a solidariedade entre nossos usuários, construindo uma comunidade global de apoio mútuo.",
+  },
+
   menuItems: {
     perfil: {
       title: "Perfil",
