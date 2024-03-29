@@ -21,7 +21,7 @@ export default function SettingsButton() {
       <Sheet>
         <SheetTrigger>
           {" "}
-          <IoMdSettings className="text-3xl" />
+          <IoMdSettings className="text-3xl hover:text-[#1CC0A9]" />
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>
