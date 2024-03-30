@@ -8,7 +8,7 @@ import { Locale } from "@/config/i18n.config";
 import LanguageSwitch from "../LanguageSwitch/LanguageSwtich";
 import { useLanguage } from "@/hooks/LanguageHook";
 import { useEffect } from "react";
-import { signIn, useSession, callbackUrl } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import SettingsButton from "../SettingsButton/SettingsButton";
 
