@@ -8,14 +8,13 @@ import { Locale } from "@/config/i18n.config";
 import LanguageSwitch from "../LanguageSwitch/LanguageSwtich";
 import { useLanguage } from "@/hooks/LanguageHook";
 import { useEffect } from "react";
-import { signIn } from "next-auth/react";
+import { signIn, useSession, callbackUrl } from "next-auth/react";
+import { redirect } from "next/navigation";
+import SettingsButton from "../SettingsButton/SettingsButton";
+
 export default function LoginRegister() {
   const { lang } = useLanguage();
   const t = getDictionaryUseClient(lang);
-
-  useEffect(() => {
-    console.log("alterou");
-  }, [lang]);
 
   return (
     <div className="flex items-center justify-center relative flex-grow  rounded-md shadow-2xl max-w-7xl sm:max-w-2xl w-full h-full bg-secondary ">
@@ -23,7 +22,7 @@ export default function LoginRegister() {
         <SwitchTheme />
       </div>
       <div className="absolute top-5 left-5">
-        <LanguageSwitch />
+        <SettingsButton />
       </div>
 
       <div className="flex flex-col  mx-auto px-2  ">
@@ -42,7 +41,7 @@ export default function LoginRegister() {
             icon={<FaGoogle />}
             color="#ea4335"
             onClick={() => {
-              signIn("google");
+              signIn("google", { callbackUrl: "/" });
             }}
           />
           <ButtonLogin
