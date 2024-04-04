@@ -2,6 +2,7 @@
 import StatsCount from "@/components/Stats/StatsCount";
 import { Button } from "@/components/ui/button";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -19,9 +20,11 @@ export default function Home() {
           <h1 className="text-2xl font-200 text-center">
             Você ainda não escreveu nada, que tal começar?
           </h1>
+          <Link href="/write" >
           <Button variant="outline" className="mt-5">
             Escrever
           </Button>
+          </Link>
         </div>
       </div>
     </div>
