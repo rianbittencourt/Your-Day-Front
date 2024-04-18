@@ -1,5 +1,8 @@
+"use client";
 import React from "react";
 import { FaPen, FaBookOpen } from "react-icons/fa6";
+import { useLanguage } from "@/hooks/LanguageHook";
+import { getDictionaryUseClient } from "@/dictionaries/default-dictionaries-use-client";
 
 interface Stat {
   name: string;
@@ -7,24 +10,27 @@ interface Stat {
   icon: JSX.Element;
 }
 
-const stats: Stat[] = [
-  {
-    name: "Escritas",
-    count: "0",
-    icon: <FaPen className="text-4xl opacity-25" />,
-  },
-  {
-    name: "Leituras",
-    count: "0",
-    icon: <FaBookOpen className="text-4xl opacity-25" />,
-  },
-];
-
 export default function StatsCount() {
+  const { lang } = useLanguage();
+  const t = getDictionaryUseClient(lang);
+
+  const stats: Stat[] = [
+    {
+      name: t.profile.card1,
+      count: "0",
+      icon: <FaPen className="text-4xl opacity-25" />,
+    },
+    {
+      name: t.profile.card2, // Assuming there's a key 'readings' in your translation JSON
+      count: "0",
+      icon: <FaBookOpen className="text-4xl opacity-25" />,
+    },
+  ];
+
   return (
     <div className=" w-full ">
       <h3 className="text-base font-semibold leading-6 text-primary/25">
-        Atividades
+        {t.profile.activivies}
       </h3>
       <dl className="mt-5 grid   gap-5 grid-cols-2">
         {stats.map((item) => (

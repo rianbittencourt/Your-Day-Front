@@ -27,6 +27,17 @@ export const ptBR = {
     },
   },
 
+  profile: {
+    activivies: "Atividades",
+    card1: "Escritas",
+    card2: "Leituras",
+    text: "Você ainda não escreveu nada, que tal começar?",
+  button: "Escrever"
+  
+  },
+
+
+
   register: {
     welcome: "Olá!",
     title: "Bem vindo!",
@@ -39,5 +50,6 @@ export const ptBR = {
     title: "Configurações",
     theme: "Tema",
     language: "Idioma",
+    logout: "Sair da Conta",
   },
 };

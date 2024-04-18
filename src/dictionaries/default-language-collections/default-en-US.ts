@@ -27,6 +27,14 @@ export const enUS = {
     },
   },
 
+  profile: {
+    activivies: "Activities",
+    card1: "Writings",
+    card2: "Readings",
+    text: "You haven't written anything yet, how about starting?",
+    button: "Write",
+  },
+
   register: {
     welcome: "Hi!",
     title: "Welcome!",
@@ -39,5 +47,6 @@ export const enUS = {
     title: "Settings",
     theme: "Theme",
     language: "Language",
+    logout: "Sign Out",
   },
 };

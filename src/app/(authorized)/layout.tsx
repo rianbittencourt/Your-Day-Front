@@ -4,11 +4,6 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import Header from "@/components/Header/Header";
 import type { Metadata } from "next";
-import { SessionProvider } from "next-auth/react";
-import { getServerSession } from "next-auth";
-import { useSession } from "next-auth/react";
-
-import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Your Day",
@@ -22,7 +17,7 @@ export default function LayoutMain({
 }) {
   return (
     <Providers>
-      <body className={inter.className}>
+      <body className={`${inter.className} sm:overflow-y-hidden`}>
         <Header />
         {children}
       </body>

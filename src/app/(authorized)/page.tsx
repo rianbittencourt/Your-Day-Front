@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Home() {
   const { data: session, status } = useSession();
 
-  console.log(session);
+  console.log("teste", session);
 
   return (
     <div className=" max-w-7xl mx-auto sm:px-5 px-10 mb-[10rem] sm:mb-0">
@@ -20,10 +20,10 @@ export default function Home() {
           <h1 className="text-2xl font-200 text-center">
             Você ainda não escreveu nada, que tal começar?
           </h1>
-          <Link href="/write" >
-          <Button variant="outline" className="mt-5">
-            Escrever
-          </Button>
+          <Link href="/write">
+            <Button variant="outline" className="mt-5">
+              Escrever
+            </Button>
           </Link>
         </div>
       </div>

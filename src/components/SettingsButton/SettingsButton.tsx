@@ -46,7 +46,7 @@ export default function SettingsButton() {
           {status === "authenticated" && (
             <div className="flex items-center flex-col mt-10">
               <Button variant="destructive" onClick={() => signOut()}>
-                Sair da Conta
+                {t.settings.logout}
               </Button>
             </div>
           )}

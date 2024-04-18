@@ -2,6 +2,16 @@ import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import axios from "axios";
 
+interface Session {
+  user: {
+    id: string;
+    name?: string;
+    email?: string;
+    image?: string;
+    accessToken?: string; // Adicionando accessToken à interface
+  };
+}
+
 const handler = NextAuth({
   session: { strategy: "jwt" },
   secret: process.env.NEXTAUTH_SECRET,
@@ -12,12 +22,10 @@ const handler = NextAuth({
     }),
   ],
   callbacks: {
-    async jwt({ token, account, user }: any) {
+    async jwt({ token, account, user }) {
       if (user && account) {
         token.accessToken = account.access_token;
         token.id = user?.id;
-
-        console.log(token.accessToken);
 
         try {
           const response = await axios.post(
@@ -43,6 +51,18 @@ const handler = NextAuth({
       }
 
       return token;
+    },
+    session({ session, token }) {
+      if (session.user) {
+        // Definir o id do usuário
+        session.user.id = token.sub as string;
+
+        // Definir o accessToken do usuário, se estiver disponível no token
+        if (token.accessToken) {
+          session.user.accessToken = token.accessToken;
+        }
+      }
+      return session;
     },
   },
 });
